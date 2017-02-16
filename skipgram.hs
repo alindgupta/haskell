@@ -20,7 +20,8 @@ import System.Environment (getArgs)
 skipGram :: [Int] -> Int -> Int -> [[Int]]
 skipGram (x:xs) nGrams nSkips = skipGram' (x:xs) nGrams nSkips nSkips 0
     where skipGram' (x:xs) 1 _ _ _ = [[x]]
-          skipGram' (x:xs) g s c i = [concatMap (x:) (skipGram' (drop c' xs) (g-1) s c' (i+1)) | c' <- genRange s c i]   
+                                    -- do not change to concatMap, it doesn't work
+          skipGram' (x:xs) g s c i = concat [(x:) <$> (skipGram' (drop c' xs) (g-1) s c' (i+1)) | c' <- genRange s c i]   
           genRange s c i = if i == 0
                            then [0..s]
                            else [0..(s-c)]
