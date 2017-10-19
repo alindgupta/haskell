@@ -1,4 +1,8 @@
-{- Purely list-based manipulations, very slow --}
+-- |
+--      Simple autoencoder using cross entropy loss
+--      Not tested, written for Haskell practice
+--
+--
 
 import Data.List (transpose, intercalate)
 import Data.Random (normal, sample, RVar, MonadRandom)
@@ -113,4 +117,3 @@ main = do
            whileM_ (100 cycles)
                --run loop and propagate gradients
 -}
-
