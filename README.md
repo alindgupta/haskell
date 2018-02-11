@@ -1,3 +1,3 @@
-# Assorted algorithms in Haskell
+## Assorted algorithms in Haskell
 
-## Note: These are untested and were written for practice
+#### Written for practice.
